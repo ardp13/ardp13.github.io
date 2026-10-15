@@ -55,7 +55,7 @@
     <meta property="profile:last_name" content="Pradipta">
     <meta property="profile:username" content="ardyapradipta">
 
-    <!-- TWITTER / TELEGRAM CARD (Format 'summary' agar foto profil kotak tampil proporsional di samping teks) -->
+    <!-- TWITTER / TELEGRAM CARD -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:url" content="https://ardya.my.id/">
     <meta name="twitter:title" content="Ardya Pradipta | Principal Financial Architect">
@@ -107,18 +107,13 @@
 </head>
 <body class="antialiased">
 
-    <!-- Tombol Share Mobile (Muncul di kanan atas layar awal) -->
-    <button id="mobile-share-btn" class="fixed top-24 right-4 bg-[#111827] border border-[#00FFFF] text-[#00FFFF] w-12 h-12 rounded-full shadow-[0_0_15px_rgba(0,255,255,0.3)] transition-opacity duration-300 z-40 md:hidden flex items-center justify-center">
-        <i class="fas fa-share-nodes text-xl"></i>
-    </button>
-
     <!-- Tombol Floating WhatsApp Pintar (Khusus Mobile) -->
     <a href="https://wa.me/6281231241005" id="floating-wa" class="fixed bottom-6 right-4 bg-[#25D366] text-white w-14 h-14 rounded-full shadow-[0_0_20px_rgba(37,211,102,0.5)] transition-all duration-500 transform translate-y-20 opacity-0 z-40 md:hidden flex items-center justify-center">
         <i class="fab fa-whatsapp text-3xl"></i>
     </a>
 
-    <!-- Navbar dengan Hamburger Menu -->
-    <nav class="fixed w-full z-50 bg-[#0A0F1C]/90 backdrop-blur-md border-b border-gray-800">
+    <!-- Navbar dengan Hardware Acceleration untuk Fix Bug Hamburger -->
+    <nav class="fixed w-full z-50 bg-[#0A0F1C]/95 backdrop-blur-md border-b border-gray-800" style="transform: translateZ(0);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <div class="font-bold text-xl md:text-2xl tracking-widest text-white">
@@ -157,19 +152,31 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="hero" class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-12 relative overflow-hidden">
+    <!-- Hero Section (Diperbaiki: Foto di Atas, Spacing Rapat, Tombol Share Aman) -->
+    <section id="hero" class="pt-28 pb-12 md:pt-32 md:pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-6 md:gap-12 relative overflow-hidden">
         
-        <!-- Bagian Teks (Atas di HP, Rata Tengah) -->
-        <div class="md:w-3/5 z-10 text-center md:text-left order-1 md:order-1" data-aos="fade-right" data-aos-duration="1200">
-            <h2 class="cyan-text text-xs md:text-sm font-bold tracking-widest uppercase mb-3"><i class="fas fa-chart-line mr-2"></i> Bespoke Financial Engineering</h2>
+        <!-- Tombol Share Mobile (Absolute: Sejajar Foto, Hilang Saat Scroll) -->
+        <button id="mobile-share-btn" class="absolute top-28 right-4 bg-[#111827] border border-[#00FFFF] text-[#00FFFF] w-10 h-10 rounded-full shadow-[0_0_10px_rgba(0,255,255,0.3)] transition-opacity duration-300 z-40 md:hidden flex items-center justify-center">
+            <i class="fas fa-share-nodes text-lg"></i>
+        </button>
+
+        <!-- FOTO PROFIL (Order 1 di Mobile, w-32 proporsional, nempel teks) -->
+        <div class="w-full flex justify-center z-10 relative order-1 md:order-2 mb-2 md:mb-0" data-aos="zoom-in" data-aos-duration="1500">
+            <div class="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 to-yellow-500/20 rounded-full blur-2xl md:blur-3xl"></div>
+            <img src="profil.png" alt="Ardya Pradipta" class="relative w-32 h-32 md:w-80 md:h-80 object-cover rounded-full border-2 md:border-4 border-[#D4AF37] shadow-[0_0_30px_rgba(212,175,55,0.3)] transition transform hover:scale-105 duration-500">
+        </div>
+
+        <!-- Bagian Teks (Order 2 di Mobile, Semua Tombol Centered) -->
+        <div class="w-full z-10 text-center md:text-left order-2 md:order-1" data-aos="fade-right" data-aos-duration="1200">
+            <h2 class="cyan-text text-xs md:text-sm font-bold tracking-widest uppercase mb-2 md:mb-3"><i class="fas fa-chart-line mr-2"></i> Bespoke Financial Engineering</h2>
             <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4 md:mb-6">
                 Saya Mengukur Masa Depan & <span class="gold-text">Kuantifikasi Risiko Bisnis Anda.</span>
             </h1>
             <p class="text-sm md:text-lg text-gray-400 mb-6 md:mb-8 leading-relaxed">
                 Menerjemahkan kompleksitas menjadi <strong>Financial Model 3-Statement</strong> dan dokumen <strong>Feasibility Study</strong> berstandar institusi (McKinsey / Big-4 style). Instrumen absolut untuk penggalangan dana (Ekuitas & Utang), M&A, dan validasi kelayakan proyek strategis.
             </p>
-            <!-- Tombol (Centered di Mobile, Left di Desktop) -->
+            
+            <!-- Tombol Flex (Rata Tengah di HP, Rata Kiri di Laptop) -->
             <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
                 <a href="https://wa.me/6281231241005" target="_blank" class="bg-[#25D366] text-white px-6 py-3 md:px-8 rounded font-bold hover:bg-green-500 transition shadow-[0_0_20px_rgba(37,211,102,0.4)] flex justify-center items-center gap-2">
                     <i class="fab fa-whatsapp text-xl"></i> Konsultasi via WhatsApp
@@ -178,75 +185,65 @@
                     <i class="fas fa-envelope text-xl"></i> ardyapradipta@gmail.com
                 </a>
             </div>
-            <!-- Trust Badge -->
+            
+            <!-- Trust Badge (Rata Tengah di HP) -->
             <div class="mt-6 flex justify-center md:justify-start items-center gap-2 text-xs md:text-sm text-gray-500">
                 <i class="fas fa-shield-alt text-[#D4AF37]"></i> Verified 5-Star Expert di <a href="https://fastwork.id/byob/3ZxGyoZ6JH?openExternalBrowser=1&source=byob" target="_blank" class="text-[#00FFFF] hover:underline">Fastwork</a>
             </div>
         </div>
-        
-        <!-- FOTO PROFIL (Diperkecil di Mobile) -->
-        <div class="md:w-2/5 flex justify-center z-10 relative order-2 md:order-2" data-aos="zoom-in" data-aos-duration="1500">
-            <div class="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 to-yellow-500/20 rounded-full blur-2xl md:blur-3xl"></div>
-            <!-- Ukuran w-40 h-40 di HP, w-80 h-80 di Desktop -->
-            <img src="profil.png" alt="Ardya Pradipta" class="relative w-40 h-40 md:w-80 md:h-80 object-cover rounded-full border-4 border-[#D4AF37] shadow-[0_0_40px_rgba(212,175,55,0.3)] transition transform hover:scale-105 duration-500">
-        </div>
     </section>
 
     <!-- Quick Stats Dinamis -->
-    <section class="border-y border-gray-800 bg-[#0c1222] py-8">
-        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6 text-center" data-aos="fade-up" data-aos-duration="1000">
-            <div><h3 class="text-3xl md:text-4xl font-bold text-white"><span class="counter" id="exp-counter" data-target="14">0</span><span class="cyan-text">+</span></h3><p class="text-xs md:text-sm text-gray-400 mt-2 font-medium">Tahun Pengalaman</p></div>
-            <div><h3 class="text-3xl md:text-4xl font-bold text-white">100<span class="gold-text">%</span></h3><p class="text-xs md:text-sm text-gray-400 mt-2 font-medium">Kepuasan Klien</p></div>
-            <div><h3 class="text-3xl md:text-4xl font-bold text-white"><span class="counter" data-target="5">0</span><span class="cyan-text">.8K+</span></h3><p class="text-xs md:text-sm text-gray-400 mt-2 font-medium">Pengikut Sosmed</p></div>
-            <div><h3 class="text-3xl md:text-4xl font-bold text-white">4.7<span class="gold-text">/5</span></h3><p class="text-xs md:text-sm text-gray-400 mt-2 font-medium">Rating Instruktur</p></div>
+    <section class="border-y border-gray-800 bg-[#0c1222] py-6 md:py-8">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 text-center" data-aos="fade-up" data-aos-duration="1000">
+            <div><h3 class="text-3xl md:text-4xl font-bold text-white"><span class="counter" id="exp-counter" data-target="14">0</span><span class="cyan-text">+</span></h3><p class="text-xs md:text-sm text-gray-400 mt-1 md:mt-2 font-medium">Tahun Pengalaman</p></div>
+            <div><h3 class="text-3xl md:text-4xl font-bold text-white">100<span class="gold-text">%</span></h3><p class="text-xs md:text-sm text-gray-400 mt-1 md:mt-2 font-medium">Kepuasan Klien</p></div>
+            <div><h3 class="text-3xl md:text-4xl font-bold text-white"><span class="counter" data-target="5">0</span><span class="cyan-text">.8K+</span></h3><p class="text-xs md:text-sm text-gray-400 mt-1 md:mt-2 font-medium">Pengikut Sosmed</p></div>
+            <div><h3 class="text-3xl md:text-4xl font-bold text-white">4.7<span class="gold-text">/5</span></h3><p class="text-xs md:text-sm text-gray-400 mt-1 md:mt-2 font-medium">Rating Instruktur</p></div>
         </div>
     </section>
 
-    <!-- Core Competencies -->
-    <section id="keahlian" class="py-20 bg-[#0A0F1C]">
+    <!-- Core Competencies (Jarak Diperbaiki: py-12 md:py-24) -->
+    <section id="keahlian" class="py-12 md:py-24 bg-[#0A0F1C]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12" data-aos="fade-up">
+            <div class="text-center mb-8 md:mb-12" data-aos="fade-up">
                 <h2 class="cyan-text text-sm font-bold tracking-widest uppercase mb-2">The Value I Deliver</h2>
-                <h3 class="text-3xl md:text-4xl font-bold text-white">4 Pilar Keahlian Eksekutif</h3>
+                <h3 class="text-2xl md:text-4xl font-bold text-white">4 Pilar Keahlian Eksekutif</h3>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Service 1 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 <div class="bg-panel p-6 md:p-8 rounded-xl glow-gold" data-aos="fade-up" data-aos-delay="100">
                     <div class="w-12 h-12 rounded-lg bg-gray-800 flex items-center justify-center mb-4 border border-[#D4AF37]">
                         <i class="fas fa-sitemap text-xl text-[#D4AF37]"></i>
                     </div>
-                    <h3 class="text-lg md:text-xl font-bold text-white mb-3">Investment-Grade Financial Modeling</h3>
+                    <h3 class="text-lg md:text-xl font-bold text-white mb-2 md:mb-3">Investment-Grade Financial Modeling</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">
                         Arsitektur <em>Zero-Hardcoding</em> terintegrasi 3-Statement. Dirancang khusus untuk pencarian dana (Ekuitas/Debt), restrukturisasi, dan valuasi multi-skenario (DCF, WACC, NPV/IRR) tingkat institusi.
                     </p>
                 </div>
-                <!-- Service 2 -->
                 <div class="bg-panel p-6 md:p-8 rounded-xl glow-box" data-aos="fade-up" data-aos-delay="200">
                     <div class="w-12 h-12 rounded-lg bg-gray-800 flex items-center justify-center mb-4 border border-[#00FFFF]">
                         <i class="fas fa-book text-xl text-[#00FFFF]"></i>
                     </div>
-                    <h3 class="text-lg md:text-xl font-bold text-white mb-3">Feasibility Study & Executive Reporting</h3>
+                    <h3 class="text-lg md:text-xl font-bold text-white mb-2 md:mb-3">Feasibility Study & Executive Reporting</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">
                         Saya menyusun studi kelayakan komprehensif yang menerjemahkan model finansial ke dalam narasi komersial yang tajam dan meyakinkan (<em>Investment-ready</em>) bagi jajaran direksi dan bank.
                     </p>
                 </div>
-                <!-- Service 3 -->
                 <div class="bg-panel p-6 md:p-8 rounded-xl glow-box" data-aos="fade-up" data-aos-delay="300">
                     <div class="w-12 h-12 rounded-lg bg-gray-800 flex items-center justify-center mb-4 border border-[#00FFFF]">
                         <i class="fas fa-chart-pie text-xl text-[#00FFFF]"></i>
                     </div>
-                    <h3 class="text-lg md:text-xl font-bold text-white mb-3">C-Level Data Visualization & Risk Analytics</h3>
+                    <h3 class="text-lg md:text-xl font-bold text-white mb-2 md:mb-3">C-Level Data Visualization & Risk Analytics</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">
-                        Mengkomunikasikan wawasan finansial melalui arsenal 20+ instrumen visual C-Level (termasuk <em>Sankey Cashflow, Treemap, Sunburst, Radar</em>, hingga <em>Sensitivity Heatmap</em>). Didukung visualisasi mitigasi risiko Monte Carlo.
+                        Mengkomunikasikan wawasan finansial melalui arsenal 20+ instrumen visual C-Level (termasuk <em>Sankey Cashflow, Treemap, Sunburst, Radar</em>, hingga <em>Sensitivity Heatmap</em>). Didukung mitigasi risiko Monte Carlo.
                     </p>
                 </div>
-                <!-- Service 4 -->
                 <div class="bg-panel p-6 md:p-8 rounded-xl glow-gold" data-aos="fade-up" data-aos-delay="400">
                     <div class="w-12 h-12 rounded-lg bg-gray-800 flex items-center justify-center mb-4 border border-[#D4AF37]">
                         <i class="fas fa-microscope text-xl text-[#D4AF37]"></i>
                     </div>
-                    <h3 class="text-lg md:text-xl font-bold text-white mb-3">Market Research & Academic Statistics</h3>
+                    <h3 class="text-lg md:text-xl font-bold text-white mb-2 md:mb-3">Market Research & Academic Statistics</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">
                         Restrukturisasi data panel dan pemodelan ekonometrika lanjutan (Regresi, <em>Time Series</em>). Esensial untuk memproyeksikan permintaan pasar pada <em>Feasibility Study</em> maupun riset presisi tinggi.
                     </p>
@@ -256,18 +253,18 @@
     </section>
 
     <!-- Showcase / Live Demo -->
-    <section id="demonstrasi" class="py-20 bg-[#0c1222] border-y border-gray-800">
+    <section id="demonstrasi" class="py-12 md:py-24 bg-[#0c1222] border-y border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12" data-aos="fade-up">
+            <div class="text-center mb-8 md:mb-12" data-aos="fade-up">
                 <h2 class="cyan-text text-sm font-bold tracking-widest uppercase mb-2">Show, Don't Tell</h2>
-                <h3 class="text-3xl font-bold text-white mb-4">Demonstrasi Kapabilitas Analisis</h3>
+                <h3 class="text-2xl md:text-4xl font-bold text-white mb-4">Demonstrasi Kapabilitas Analisis</h3>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <!-- 3-Statement Table -->
                 <div class="bg-panel rounded-xl p-6 md:p-8 border border-gray-800 shadow-2xl" data-aos="fade-right">
                     <h4 class="text-white font-bold text-lg mb-1">Financial Statement Integration</h4>
-                    <p class="text-xs text-[#00FFFF] mb-6">McKinsey / Big-4 Presentation Standard</p>
+                    <p class="text-xs text-[#00FFFF] mb-4 md:mb-6">McKinsey / Big-4 Presentation Standard</p>
                     <div class="overflow-x-auto">
                         <table class="mckinsey-table text-sm whitespace-nowrap">
                             <thead>
@@ -296,7 +293,7 @@
                 <!-- Chart DCF -->
                 <div class="bg-panel rounded-xl p-6 md:p-8 border border-gray-800 shadow-2xl" data-aos="fade-left">
                     <h4 class="text-white font-bold text-lg mb-1">Free Cash Flow (FCFF) Trajectory</h4>
-                    <p class="text-xs text-[#D4AF37] mb-6">Valuation & CapEx Burn Visual Analytics</p>
+                    <p class="text-xs text-[#D4AF37] mb-4 md:mb-6">Valuation & CapEx Burn Visual Analytics</p>
                     <div class="relative h-56 w-full">
                         <canvas id="valChart"></canvas>
                     </div>
@@ -306,21 +303,21 @@
     </section>
 
     <!-- Experience & Education Timeline -->
-    <section id="pengalaman" class="py-20 bg-[#0A0F1C]">
+    <section id="pengalaman" class="py-12 md:py-24 bg-[#0A0F1C]">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12" data-aos="fade-up">
+            <div class="text-center mb-8 md:mb-12" data-aos="fade-up">
                 <h2 class="cyan-text text-sm font-bold tracking-widest uppercase mb-2">Track Record</h2>
-                <h3 class="text-3xl font-bold text-white mb-4">Pengalaman & Fondasi Akademik</h3>
+                <h3 class="text-2xl md:text-4xl font-bold text-white mb-4">Pengalaman & Fondasi Akademik</h3>
             </div>
 
             <!-- Experience -->
-            <div class="mb-12">
-                <h4 class="text-xl font-bold text-white mb-8 border-b border-gray-800 pb-3"><i class="fas fa-briefcase text-[#D4AF37] mr-3"></i> Perjalanan Karier</h4>
+            <div class="mb-10 md:mb-16">
+                <h4 class="text-xl font-bold text-white mb-6 md:mb-8 border-b border-gray-800 pb-3"><i class="fas fa-briefcase text-[#D4AF37] mr-3"></i> Perjalanan Karier</h4>
                 
                 <div class="timeline-container" data-aos="fade-up">
                     <div class="timeline-dot timeline-dot-gold"></div>
                     <h5 class="text-lg font-bold text-white">Principal Financial Architect</h5>
-                    <p class="text-xs md:text-sm font-semibold text-[#D4AF37] mb-3">Independent Advisory & Engineering | Sep 2013 - <span class="dynamic-year">Present</span></p>
+                    <p class="text-xs md:text-sm font-semibold text-[#D4AF37] mb-2 md:mb-3">Independent Advisory & Engineering | Sep 2013 - <span class="dynamic-year">Present</span></p>
                     <p class="text-gray-400 text-sm leading-relaxed mb-6">Mendesain arsitektur keuangan <em>High-Fidelity</em> dan melakukan mitigasi risiko kuantitatif yang menjadi tulang punggung bagi keputusan investasi bernilai tinggi dan pengajuan pembiayaan bisnis korporat.</p>
                 </div>
 
@@ -328,7 +325,7 @@
                     <div class="timeline-dot"></div>
                     <h5 class="text-lg font-bold text-white">Founder & Educational Content Creator</h5>
                     <p class="text-xs md:text-sm font-semibold text-[#00FFFF] mb-1">Finansialpost | Jan 2020 - <span class="dynamic-year">Present</span></p>
-                    <a href="https://www.youtube.com/@Finansialpost" target="_blank" class="text-xs text-[#D4AF37] hover:underline mb-3 inline-block"><i class="fas fa-external-link-alt mr-1"></i> Kunjungi YouTube Channel</a>
+                    <a href="https://www.youtube.com/@Finansialpost" target="_blank" class="text-xs text-[#D4AF37] hover:underline mb-2 md:mb-3 inline-block"><i class="fas fa-external-link-alt mr-1"></i> Kunjungi YouTube Channel</a>
                     <p class="text-gray-400 text-sm leading-relaxed mb-6">Mendirikan pusat edukasi strategis untuk menjembatani ketelitian akuntansi tradisional dengan teknologi otomasi dan pemodelan finansial. Diikuti oleh ribuan praktisi keuangan.</p>
                 </div>
 
@@ -336,14 +333,14 @@
                     <div class="timeline-dot"></div>
                     <h5 class="text-lg font-bold text-white">Top-Rated Course Instructor</h5>
                     <p class="text-xs md:text-sm font-semibold text-[#00FFFF] mb-1">Udemy | Jun 2024 - <span class="dynamic-year">Present</span></p>
-                    <a href="https://www.udemy.com/course/lengkap-siklus-akuntansi-penyusunan-laba-rugi-dan-neraca/" target="_blank" class="text-xs text-[#D4AF37] hover:underline mb-3 inline-block"><i class="fas fa-external-link-alt mr-1"></i> Cek Silabus Kursus</a>
+                    <a href="https://www.udemy.com/course/lengkap-siklus-akuntansi-penyusunan-laba-rugi-dan-neraca/" target="_blank" class="text-xs text-[#D4AF37] hover:underline mb-2 md:mb-3 inline-block"><i class="fas fa-external-link-alt mr-1"></i> Cek Silabus Kursus</a>
                     <p class="text-gray-400 text-sm leading-relaxed mb-6">Merancang kurikulum "Integritas Struktural" data keuangan (Siklus Akuntansi hingga Laba Rugi/Neraca) yang dipercaya oleh ratusan peserta untuk mencapai standar kompetensi <em>Audit-Ready</em>.</p>
                 </div>
             </div>
 
             <!-- Education -->
             <div>
-                <h4 class="text-xl font-bold text-white mb-8 border-b border-gray-800 pb-3"><i class="fas fa-graduation-cap text-[#D4AF37] mr-3"></i> Latar Belakang Pendidikan</h4>
+                <h4 class="text-xl font-bold text-white mb-6 md:mb-8 border-b border-gray-800 pb-3"><i class="fas fa-graduation-cap text-[#D4AF37] mr-3"></i> Latar Belakang Pendidikan</h4>
                 <div class="timeline-container" data-aos="fade-up">
                     <div class="timeline-dot"></div>
                     <h5 class="text-lg font-bold text-white">Master's Degree in Financial Management</h5>
@@ -359,7 +356,7 @@
     </section>
 
     <!-- Footer / CTA -->
-    <footer id="footer" class="bg-[#050810] pt-16 pb-10 border-t border-gray-800">
+    <footer id="footer" class="bg-[#050810] pt-12 pb-8 md:pt-16 md:pb-10 border-t border-gray-800">
         <div class="max-w-4xl mx-auto px-4 text-center">
             <h2 class="text-2xl md:text-3xl font-extrabold text-white mb-4">Siap Menata Ulang Masa Depan Bisnis Anda?</h2>
             <p class="text-gray-400 mb-8 max-w-2xl mx-auto text-sm md:text-base">Tinggalkan model Excel yang rentan. Mari berkolaborasi menciptakan "Mesin Finansial" yang akurat dan siap menghadapi <em>due-diligence</em> investor.</p>
@@ -425,13 +422,14 @@
                 }
             });
 
-            // 3. Logika Muncul/Hilang Floating WA & Tombol Share saat di-scroll
+            // 3. Logika Scroll (Tombol Share Hilang, Floating WA Muncul)
             const hero = document.getElementById('hero');
             const footer = document.getElementById('footer');
             const waFloat = document.getElementById('floating-wa');
 
             window.addEventListener('scroll', () => {
-                if (window.scrollY > 150) {
+                // Tombol Share HILANG saat scroll melebihi 50px
+                if (window.scrollY > 50) {
                     shareBtn.classList.add('opacity-0', 'pointer-events-none');
                 } else {
                     shareBtn.classList.remove('opacity-0', 'pointer-events-none');
@@ -441,6 +439,7 @@
                 const footerTop = footer.getBoundingClientRect().top;
                 const windowHeight = window.innerHeight;
                 
+                // Floating WA
                 if (heroBottom < 100 && footerTop > windowHeight) {
                     waFloat.classList.remove('translate-y-20', 'opacity-0');
                 } else {
