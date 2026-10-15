@@ -114,10 +114,10 @@
         <i class="fab fa-whatsapp text-3xl"></i>
     </a>
 
-    <!-- NAVBAR DIPERBAIKI (Terkunci Absolut di Atas Sempurna) -->
+    <!-- NAVBAR (Terkunci Absolut di Atas Sempurna. h-16 di mobile biar ga menuhin layar) -->
     <nav class="fixed top-0 left-0 w-full z-50 bg-[#0A0F1C]/95 backdrop-blur-md border-b border-gray-800 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
+            <div class="flex items-center justify-between h-16 md:h-20">
                 <div class="font-bold text-xl md:text-2xl tracking-widest text-white">
                     ARDYA<span class="gold-text">PRADIPTA</span>
                 </div>
@@ -142,7 +142,7 @@
         </div>
 
         <!-- Dropdown Menu Mobile -->
-        <div id="mobile-menu" class="hidden md:hidden bg-[#111827] border-b border-gray-800 shadow-2xl">
+        <div id="mobile-menu" class="hidden md:hidden bg-[#111827] border-b border-gray-800 shadow-2xl absolute w-full">
             <div class="px-4 pt-2 pb-6 space-y-4 flex flex-col text-center">
                 <a href="#keahlian" class="block text-gray-300 hover:text-[#00FFFF] font-medium py-2">Keahlian Utama</a>
                 <a href="#demonstrasi" class="block text-gray-300 hover:text-[#00FFFF] font-medium py-2">Kapabilitas</a>
@@ -154,31 +154,33 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="hero" class="pt-28 pb-12 md:pt-32 md:pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-6 md:gap-12 relative overflow-hidden">
+    <!-- Hero Section (DIPERBAIKI TOTAL. pt-24 di mobile biar tombol WA kelihatan) -->
+    <section id="hero" class="pt-24 pb-8 md:pt-32 md:pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-4 md:gap-12 relative overflow-hidden">
         
         <!-- Tombol Share Mobile (Absolute: Sejajar Foto, Hilang Saat Scroll) -->
-        <button id="mobile-share-btn" class="absolute top-28 right-4 bg-[#111827] border border-[#00FFFF] text-[#00FFFF] w-10 h-10 rounded-full shadow-[0_0_10px_rgba(0,255,255,0.3)] transition-opacity duration-300 z-40 md:hidden flex items-center justify-center">
+        <button id="mobile-share-btn" class="absolute top-24 right-4 bg-[#111827] border border-[#00FFFF] text-[#00FFFF] w-10 h-10 rounded-full shadow-[0_0_10px_rgba(0,255,255,0.3)] transition-opacity duration-300 z-40 md:hidden flex items-center justify-center">
             <i class="fas fa-share-nodes text-lg"></i>
         </button>
 
-        <!-- FOTO PROFIL -->
-        <div class="w-full flex justify-center z-10 relative order-1 md:order-2 mb-2 md:mb-0" data-aos="zoom-in" data-aos-duration="1500">
+        <!-- FOTO PROFIL (Order 1 di Mobile, Order 2 di Desktop. Di laptop kembali BESAR md:w-2/5) -->
+        <div class="w-full md:w-2/5 flex justify-center z-10 relative order-1 md:order-2 mb-2 md:mb-0" data-aos="zoom-in" data-aos-duration="1500">
             <div class="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 to-yellow-500/20 rounded-full blur-2xl md:blur-3xl"></div>
-            <img src="profil.png" alt="Ardya Pradipta" class="relative w-32 h-32 md:w-80 md:h-80 object-cover rounded-full border-2 md:border-4 border-[#D4AF37] shadow-[0_0_30px_rgba(212,175,55,0.3)] transition transform hover:scale-105 duration-500">
+            <!-- Di HP ukuran kompak w-28, di Laptop BESAR w-80 -->
+            <img src="profil.png" alt="Ardya Pradipta" class="relative w-28 h-28 sm:w-32 sm:h-32 md:w-80 md:h-80 object-cover rounded-full border-2 md:border-4 border-[#D4AF37] shadow-[0_0_30px_rgba(212,175,55,0.3)] transition transform hover:scale-105 duration-500">
         </div>
 
-        <!-- Bagian Teks -->
-        <div class="w-full z-10 text-center md:text-left order-2 md:order-1" data-aos="fade-right" data-aos-duration="1200">
+        <!-- Bagian Teks (Order 2 di Mobile, Order 1 di Desktop. Pembagian ruang kembali 60% md:w-3/5) -->
+        <div class="w-full md:w-3/5 z-10 text-center md:text-left order-2 md:order-1" data-aos="fade-right" data-aos-duration="1200">
             <h2 class="cyan-text text-xs md:text-sm font-bold tracking-widest uppercase mb-2 md:mb-3"><i class="fas fa-chart-line mr-2"></i> Bespoke Financial Engineering</h2>
-            <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4 md:mb-6">
+            <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white leading-tight mb-3 md:mb-6">
                 Saya Mengukur Masa Depan & <span class="gold-text">Kuantifikasi Risiko Bisnis Anda.</span>
             </h1>
-            <p class="text-sm md:text-lg text-gray-400 mb-6 md:mb-8 leading-relaxed">
-                Menerjemahkan kompleksitas menjadi <strong>Financial Model 3-Statement</strong> dan dokumen <strong>Feasibility Study</strong> berstandar institusi (McKinsey / Big-4 style). Instrumen absolut untuk penggalangan dana (Ekuitas & Utang), M&A, dan validasi kelayakan proyek strategis.
+            <p class="text-sm md:text-lg text-gray-400 mb-5 md:mb-8 leading-relaxed">
+                Menerjemahkan kompleksitas menjadi <strong>Financial Model 3-Statement</strong> dan dokumen <strong>Feasibility Study</strong> berstandar institusi (McKinsey / Big-4 style). Instrumen absolut untuk penggalangan dana, M&A, dan kelayakan proyek.
             </p>
             
-            <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
+            <!-- Flex Column di Mobile biar rapi, Row di Desktop -->
+            <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-3 md:gap-4">
                 <a href="https://wa.me/6281231241005" target="_blank" class="bg-[#25D366] text-white px-6 py-3 md:px-8 rounded font-bold hover:bg-green-500 transition shadow-[0_0_20px_rgba(37,211,102,0.4)] flex justify-center items-center gap-2">
                     <i class="fab fa-whatsapp text-xl"></i> Konsultasi via WhatsApp
                 </a>
@@ -187,7 +189,8 @@
                 </a>
             </div>
             
-            <div class="mt-6 flex justify-center md:justify-start items-center gap-2 text-xs md:text-sm text-gray-500">
+            <!-- Trust Badge -->
+            <div class="mt-5 md:mt-6 flex justify-center md:justify-start items-center gap-2 text-xs md:text-sm text-gray-500">
                 <i class="fas fa-shield-alt text-[#D4AF37]"></i> Verified 5-Star Expert di <a href="https://fastwork.id/byob/3ZxGyoZ6JH?openExternalBrowser=1&source=byob" target="_blank" class="text-[#00FFFF] hover:underline">Fastwork</a>
             </div>
         </div>
@@ -204,7 +207,7 @@
     </section>
 
     <!-- Core Competencies -->
-    <section id="keahlian" class="py-12 md:py-24 bg-[#0A0F1C] w-full overflow-hidden">
+    <section id="keahlian" class="py-10 md:py-20 bg-[#0A0F1C] w-full overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-8 md:mb-12" data-aos="fade-up">
                 <h2 class="cyan-text text-sm font-bold tracking-widest uppercase mb-2">The Value I Deliver</h2>
@@ -253,7 +256,7 @@
     </section>
 
     <!-- Showcase / Live Demo -->
-    <section id="demonstrasi" class="py-12 md:py-24 bg-[#0c1222] border-y border-gray-800 w-full overflow-hidden">
+    <section id="demonstrasi" class="py-10 md:py-20 bg-[#0c1222] border-y border-gray-800 w-full overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-8 md:mb-12" data-aos="fade-up">
                 <h2 class="cyan-text text-sm font-bold tracking-widest uppercase mb-2">Show, Don't Tell</h2>
@@ -303,7 +306,7 @@
     </section>
 
     <!-- Experience & Education Timeline -->
-    <section id="pengalaman" class="py-12 md:py-24 bg-[#0A0F1C] w-full overflow-hidden">
+    <section id="pengalaman" class="py-10 md:py-20 bg-[#0A0F1C] w-full overflow-hidden">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-8 md:mb-12" data-aos="fade-up">
                 <h2 class="cyan-text text-sm font-bold tracking-widest uppercase mb-2">Track Record</h2>
@@ -356,7 +359,7 @@
     </section>
 
     <!-- Footer / CTA -->
-    <footer id="footer" class="bg-[#050810] pt-12 pb-8 md:pt-16 md:pb-10 border-t border-gray-800 w-full overflow-hidden">
+    <footer id="footer" class="bg-[#050810] pt-10 pb-8 md:pt-16 md:pb-10 border-t border-gray-800 w-full overflow-hidden">
         <div class="max-w-4xl mx-auto px-4 text-center">
             <h2 class="text-2xl md:text-3xl font-extrabold text-white mb-4">Siap Menata Ulang Masa Depan Bisnis Anda?</h2>
             <p class="text-gray-400 mb-8 max-w-2xl mx-auto text-sm md:text-base">Tinggalkan model Excel yang rentan. Mari berkolaborasi menciptakan "Mesin Finansial" yang akurat dan siap menghadapi <em>due-diligence</em> investor.</p>
