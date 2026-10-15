@@ -84,7 +84,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #0A0F1C; color: #E2E8F0; overflow-x: hidden; }
+        /* MENGUNCI SUMBU X AGAR WEB TIDAK BISA DIGESER KANAN-KIRI */
+        html, body { font-family: 'Inter', sans-serif; background-color: #0A0F1C; color: #E2E8F0; overflow-x: hidden; width: 100%; position: relative; }
+        
         .gold-text { color: #D4AF37; }
         .cyan-text { color: #00FFFF; }
         .bg-panel { background-color: #111827; }
@@ -105,15 +107,15 @@
         .timeline-dot-gold { background-color: #D4AF37; }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased overflow-x-hidden">
 
     <!-- Tombol Floating WhatsApp Pintar (Khusus Mobile) -->
     <a href="https://wa.me/6281231241005" id="floating-wa" class="fixed bottom-6 right-4 bg-[#25D366] text-white w-14 h-14 rounded-full shadow-[0_0_20px_rgba(37,211,102,0.5)] transition-all duration-500 transform translate-y-20 opacity-0 z-40 md:hidden flex items-center justify-center">
         <i class="fab fa-whatsapp text-3xl"></i>
     </a>
 
-    <!-- Navbar dengan Hardware Acceleration untuk Fix Bug Hamburger -->
-    <nav class="fixed w-full z-50 bg-[#0A0F1C]/95 backdrop-blur-md border-b border-gray-800" style="transform: translateZ(0);">
+    <!-- NAVBAR DIPERBAIKI (Terkunci Absolut di Atas Sempurna) -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-[#0A0F1C]/95 backdrop-blur-md border-b border-gray-800 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <div class="font-bold text-xl md:text-2xl tracking-widest text-white">
@@ -152,7 +154,7 @@
         </div>
     </nav>
 
-    <!-- Hero Section (Diperbaiki: Foto di Atas, Spacing Rapat, Tombol Share Aman) -->
+    <!-- Hero Section -->
     <section id="hero" class="pt-28 pb-12 md:pt-32 md:pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-6 md:gap-12 relative overflow-hidden">
         
         <!-- Tombol Share Mobile (Absolute: Sejajar Foto, Hilang Saat Scroll) -->
@@ -160,13 +162,13 @@
             <i class="fas fa-share-nodes text-lg"></i>
         </button>
 
-        <!-- FOTO PROFIL (Order 1 di Mobile, w-32 proporsional, nempel teks) -->
+        <!-- FOTO PROFIL -->
         <div class="w-full flex justify-center z-10 relative order-1 md:order-2 mb-2 md:mb-0" data-aos="zoom-in" data-aos-duration="1500">
             <div class="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 to-yellow-500/20 rounded-full blur-2xl md:blur-3xl"></div>
             <img src="profil.png" alt="Ardya Pradipta" class="relative w-32 h-32 md:w-80 md:h-80 object-cover rounded-full border-2 md:border-4 border-[#D4AF37] shadow-[0_0_30px_rgba(212,175,55,0.3)] transition transform hover:scale-105 duration-500">
         </div>
 
-        <!-- Bagian Teks (Order 2 di Mobile, Semua Tombol Centered) -->
+        <!-- Bagian Teks -->
         <div class="w-full z-10 text-center md:text-left order-2 md:order-1" data-aos="fade-right" data-aos-duration="1200">
             <h2 class="cyan-text text-xs md:text-sm font-bold tracking-widest uppercase mb-2 md:mb-3"><i class="fas fa-chart-line mr-2"></i> Bespoke Financial Engineering</h2>
             <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4 md:mb-6">
@@ -176,7 +178,6 @@
                 Menerjemahkan kompleksitas menjadi <strong>Financial Model 3-Statement</strong> dan dokumen <strong>Feasibility Study</strong> berstandar institusi (McKinsey / Big-4 style). Instrumen absolut untuk penggalangan dana (Ekuitas & Utang), M&A, dan validasi kelayakan proyek strategis.
             </p>
             
-            <!-- Tombol Flex (Rata Tengah di HP, Rata Kiri di Laptop) -->
             <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
                 <a href="https://wa.me/6281231241005" target="_blank" class="bg-[#25D366] text-white px-6 py-3 md:px-8 rounded font-bold hover:bg-green-500 transition shadow-[0_0_20px_rgba(37,211,102,0.4)] flex justify-center items-center gap-2">
                     <i class="fab fa-whatsapp text-xl"></i> Konsultasi via WhatsApp
@@ -186,7 +187,6 @@
                 </a>
             </div>
             
-            <!-- Trust Badge (Rata Tengah di HP) -->
             <div class="mt-6 flex justify-center md:justify-start items-center gap-2 text-xs md:text-sm text-gray-500">
                 <i class="fas fa-shield-alt text-[#D4AF37]"></i> Verified 5-Star Expert di <a href="https://fastwork.id/byob/3ZxGyoZ6JH?openExternalBrowser=1&source=byob" target="_blank" class="text-[#00FFFF] hover:underline">Fastwork</a>
             </div>
@@ -194,7 +194,7 @@
     </section>
 
     <!-- Quick Stats Dinamis -->
-    <section class="border-y border-gray-800 bg-[#0c1222] py-6 md:py-8">
+    <section class="border-y border-gray-800 bg-[#0c1222] py-6 md:py-8 w-full overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 text-center" data-aos="fade-up" data-aos-duration="1000">
             <div><h3 class="text-3xl md:text-4xl font-bold text-white"><span class="counter" id="exp-counter" data-target="14">0</span><span class="cyan-text">+</span></h3><p class="text-xs md:text-sm text-gray-400 mt-1 md:mt-2 font-medium">Tahun Pengalaman</p></div>
             <div><h3 class="text-3xl md:text-4xl font-bold text-white">100<span class="gold-text">%</span></h3><p class="text-xs md:text-sm text-gray-400 mt-1 md:mt-2 font-medium">Kepuasan Klien</p></div>
@@ -203,8 +203,8 @@
         </div>
     </section>
 
-    <!-- Core Competencies (Jarak Diperbaiki: py-12 md:py-24) -->
-    <section id="keahlian" class="py-12 md:py-24 bg-[#0A0F1C]">
+    <!-- Core Competencies -->
+    <section id="keahlian" class="py-12 md:py-24 bg-[#0A0F1C] w-full overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-8 md:mb-12" data-aos="fade-up">
                 <h2 class="cyan-text text-sm font-bold tracking-widest uppercase mb-2">The Value I Deliver</h2>
@@ -253,7 +253,7 @@
     </section>
 
     <!-- Showcase / Live Demo -->
-    <section id="demonstrasi" class="py-12 md:py-24 bg-[#0c1222] border-y border-gray-800">
+    <section id="demonstrasi" class="py-12 md:py-24 bg-[#0c1222] border-y border-gray-800 w-full overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-8 md:mb-12" data-aos="fade-up">
                 <h2 class="cyan-text text-sm font-bold tracking-widest uppercase mb-2">Show, Don't Tell</h2>
@@ -262,11 +262,11 @@
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <!-- 3-Statement Table -->
-                <div class="bg-panel rounded-xl p-6 md:p-8 border border-gray-800 shadow-2xl" data-aos="fade-right">
+                <div class="bg-panel rounded-xl p-6 md:p-8 border border-gray-800 shadow-2xl overflow-hidden" data-aos="fade-right">
                     <h4 class="text-white font-bold text-lg mb-1">Financial Statement Integration</h4>
                     <p class="text-xs text-[#00FFFF] mb-4 md:mb-6">McKinsey / Big-4 Presentation Standard</p>
-                    <div class="overflow-x-auto">
-                        <table class="mckinsey-table text-sm whitespace-nowrap">
+                    <div class="overflow-x-auto w-full">
+                        <table class="mckinsey-table text-sm whitespace-nowrap w-full">
                             <thead>
                                 <tr>
                                     <th>Neraca (Juta Rp)</th>
@@ -303,7 +303,7 @@
     </section>
 
     <!-- Experience & Education Timeline -->
-    <section id="pengalaman" class="py-12 md:py-24 bg-[#0A0F1C]">
+    <section id="pengalaman" class="py-12 md:py-24 bg-[#0A0F1C] w-full overflow-hidden">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-8 md:mb-12" data-aos="fade-up">
                 <h2 class="cyan-text text-sm font-bold tracking-widest uppercase mb-2">Track Record</h2>
@@ -356,7 +356,7 @@
     </section>
 
     <!-- Footer / CTA -->
-    <footer id="footer" class="bg-[#050810] pt-12 pb-8 md:pt-16 md:pb-10 border-t border-gray-800">
+    <footer id="footer" class="bg-[#050810] pt-12 pb-8 md:pt-16 md:pb-10 border-t border-gray-800 w-full overflow-hidden">
         <div class="max-w-4xl mx-auto px-4 text-center">
             <h2 class="text-2xl md:text-3xl font-extrabold text-white mb-4">Siap Menata Ulang Masa Depan Bisnis Anda?</h2>
             <p class="text-gray-400 mb-8 max-w-2xl mx-auto text-sm md:text-base">Tinggalkan model Excel yang rentan. Mari berkolaborasi menciptakan "Mesin Finansial" yang akurat dan siap menghadapi <em>due-diligence</em> investor.</p>
